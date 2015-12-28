@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://46.4.195.237/EZTravelWCF/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://46.4.195.237/EZTravelWCF/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://46.4.195.237/EZTravelWCF/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFLocalBus" />
+      <xsd:import schemaLocation="http://46.4.195.237/EZTravelWCF/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetBusStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusStop" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPath" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_retrieveMarkerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:retrieveMarkerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_retrieveMarkerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:retrieveMarkerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetJourney_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJourney" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetJourney_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJourneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_retriveItinerary_InputMessage">
+    <wsdl:part name="parameters" element="tns:retriveItinerary" />
+  </wsdl:message>
+  <wsdl:message name="IService1_retriveItinerary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:retriveItineraryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetBusStop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBusStop" message="tns:IService1_GetBusStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBusStopResponse" message="tns:IService1_GetBusStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPath" message="tns:IService1_GetPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPathResponse" message="tns:IService1_GetPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveMarkerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/retrieveMarkerInfo" message="tns:IService1_retrieveMarkerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/retrieveMarkerInfoResponse" message="tns:IService1_retrieveMarkerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJourney">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetJourney" message="tns:IService1_GetJourney_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetJourneyResponse" message="tns:IService1_GetJourney_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLocation" message="tns:IService1_GetLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLocationResponse" message="tns:IService1_GetLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="retriveItinerary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/retriveItinerary" message="tns:IService1_retriveItinerary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/retriveItineraryResponse" message="tns:IService1_retriveItinerary_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBusStop">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBusStop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveMarkerInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/retrieveMarkerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJourney">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetJourney" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retriveItinerary">
+      <soap:operation soapAction="http://tempuri.org/IService1/retriveItinerary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://46.4.195.237/EZTravelWCF/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

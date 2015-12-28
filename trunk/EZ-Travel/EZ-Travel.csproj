@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65CD83C4-A87E-4925-9037-33936EA58CEE}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EZ_Travel</RootNamespace>
+    <AssemblyName>EZ-Travel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>EZ_Travel.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>EZ_Travel.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30422.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IsolatedStorageExplorer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\WP7 Isolated Storage Explorer\Library\IsolatedStorageExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Microsoft SDKs\Windows Phone\v7.0\Toolkit\Nov10\Bin\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Phone.Media.Extended" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="SLARToolKit, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\CodeExtreme\SLARToolkit 1.0.2.0\SLARToolKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AR.xaml.cs">
+      <DependentUpon>AR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Class\Favourite.cs" />
+    <Compile Include="Resources\Class\ItineraryClass.cs" />
+    <Compile Include="Resources\Class\Language.cs" />
+    <Compile Include="Resources\Class\POI.cs" />
+    <Compile Include="Resources\Class\POIDetails.cs" />
+    <Compile Include="Resources\Class\pushpinLocation.cs" />
+    <Compile Include="Resources\Model\PushpinModel.cs" />
+    <Compile Include="RoadMode.xaml.cs">
+      <DependentUpon>RoadMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GeocodeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\localService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PushService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RouteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SessionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Style\DefaultStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RoadMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\localService\EZ_Travel.localService.Itinerary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\localService\Service1.wsdl" />
+    <None Include="Service References\localService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\localService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\localService\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\localService\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushService\Service1.wsdl" />
+    <None Include="Service References\PushService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SessionService\Service1.wsdl" />
+    <None Include="Service References\SessionService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SessionService\Service11.wsdl" />
+    <None Include="Service References\SessionService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Resources\Sound\Alight.mp3" />
+    <Content Include="Resources\Sound\Alight.wav" />
+    <None Include="Service References\SessionService\Service11.disco" />
+    <None Include="Service References\PushService\Service1.disco" />
+    <None Include="Service References\localService\Service11.disco" />
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\SessionService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SessionService\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Resources\Marker\marker0.pat" />
+    <Resource Include="Resources\Marker\marker1.pat" />
+    <Resource Include="Resources\Marker\marker2.pat" />
+    <Resource Include="Resources\Pushpin\bus.png" />
+    <Resource Include="Resources\Pushpin\walk.png" />
+    <Resource Include="Resources\Pushpin\train.png" />
+    <Resource Include="Images\mainPageBackG.png" />
+    <Resource Include="Images\settingsBackG.png" />
+    <Resource Include="Images\wrongWay.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\infoPage.jpg" />
+    <Content Include="mainPageBackG.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\Icons\Location.png" />
+    <None Include="Service References\localService\EZ_Travel.localService.busStop.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\localService\EZ_Travel.localService.DBMarker.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\localService\EZ_Travel.localService.PathLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\localService\configuration91.svcinfo" />
+    <None Include="Service References\localService\configuration.svcinfo" />
+    <None Include="Service References\localService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\Pushpin\POI.png" />
+    <Resource Include="Resources\Icons\showPI.png" />
+    <None Include="Service References\SessionService\configuration91.svcinfo" />
+    <None Include="Service References\SessionService\configuration.svcinfo" />
+    <None Include="Service References\SessionService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SessionService\Service1.disco" />
+    <Resource Include="Resources\Pushpin\Itinerary\1.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\2.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\3.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\4.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\5.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\6.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\10.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\7.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\8.png" />
+    <Resource Include="Resources\Pushpin\Itinerary\9.png" />
+    <None Include="Service References\PushService\configuration91.svcinfo" />
+    <None Include="Service References\PushService\configuration.svcinfo" />
+    <None Include="Service References\PushService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="settingsBackG.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tile.png" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Service References\GeocodeService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\contracts.wsdl" />
+    <None Include="Service References\GeocodeService\contracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\EZ_Travel.GeocodeService.GeocodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeocodeService\geocode.wsdl" />
+    <None Include="Service References\GeocodeService\geocode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RouteService\configuration91.svcinfo" />
+    <None Include="Service References\RouteService\configuration.svcinfo" />
+    <None Include="Service References\RouteService\EZ_Travel.RouteService.MajorRoutesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RouteService\EZ_Travel.RouteService.RouteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RouteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GeocodeService\configuration91.svcinfo" />
+    <None Include="Service References\GeocodeService\configuration.svcinfo" />
+    <None Include="Service References\GeocodeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Images\leftarrow.png" />
+    <Resource Include="Images\rightarrow.png" />
+    <Resource Include="Resources\Icons\ZoomIn_Black.png" />
+    <Resource Include="Resources\Icons\ZoomIn_White.png" />
+    <Resource Include="Resources\Icons\ZoomOut_Black.png" />
+    <Resource Include="Resources\Icons\ZoomOut_White.png" />
+    <Resource Include="Resources\Pushpin\Location.png" />
+    <Resource Include="Resources\Style\Legend.png" />
+    <Content Include="Resources\Sound\Give_Up_Your_Seat.wav" />
+    <None Include="Service References\RouteService\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RouteService\contracts.wsdl" />
+    <None Include="Service References\RouteService\contracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RouteService\route.wsdl" />
+    <None Include="Service References\RouteService\route.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RouteService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="PanoramaBackground.jpg" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GeocodeService\" />
+    <WCFMetadataStorage Include="Service References\localService\" />
+    <WCFMetadataStorage Include="Service References\PushService\" />
+    <WCFMetadataStorage Include="Service References\RouteService\" />
+    <WCFMetadataStorage Include="Service References\SessionService\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

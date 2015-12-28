@@ -1,0 +1,33 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SLARWP7.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+     xmlns:media="clr-namespace:Microsoft.Phone;assembly=Microsoft.Phone.Media.Extended"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    shell:SystemTray.IsVisible="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" d:DesignHeight="480" d:DesignWidth="728" Unloaded="PhoneApplicationPage_Unloaded">
+	<phone:PhoneApplicationPage.Resources>
+	</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent">
+        <Canvas x:Name="canvas1" HorizontalAlignment="Left" Width="728">
+            <media:CameraVisualizer x:Name="cameraVisualizer" Width="716" Height="468" Canvas.Top="6" Canvas.Left="6" />
+            <Image Canvas.Left="226" Canvas.Top="36" Height="417" x:Name="okay" Stretch="Fill" Width="283" Source="/EZ-Travel;component/Images/exit.png" Visibility="Collapsed"/>
+            <Image Canvas.Left="180" Canvas.Top="166" Height="150" x:Name="rightarrow" Stretch="Fill" Width="334" Source="/EZ-Travel;component/Images/rightarrow.png" Visibility="Collapsed"/>
+            <Image Canvas.Left="180" Canvas.Top="166" Height="150" x:Name="leftarrow" Stretch="Fill" Width="334" Source="/EZ-Travel;component/Images/leftarrow.png" Visibility="Collapsed"/>
+            <Image Canvas.Left="264" Canvas.Top="149" Height="203" Name="wrong" Stretch="Fill" Width="207" Source="/EZ-Travel;component/Images/wrongWay.png" Visibility="Collapsed"/>
+            <Popup Name="popupInfo" Canvas.Top="10" IsOpen="False">
+                <Image Source="/EZ-Travel;component/Images/infoPage.jpg" Width="720" Height="460" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+            </Popup>
+            
+        </Canvas>
+    </Grid>
+</phone:PhoneApplicationPage>

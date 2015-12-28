@@ -1,0 +1,32 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="EZ_Travel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.517*" />
+            <ColumnDefinition Width="0.483*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0.51*"/>
+            <RowDefinition Height="0.49*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ContentPanel" Height="768" VerticalAlignment="Bottom" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        	<Grid.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="Images/mainPageBackG.png"/>
+        	</Grid.Background>
+            <Button x:Name="btnSettings" FontSize="22" Content="Settings" Margin="96,0,96,296" VerticalAlignment="Bottom" Background="White" BorderBrush="White" Click="btnSettings_Click" Foreground="#FF842F1A" />
+        	<Button x:Name="btnJP" FontSize="22" Content="Journey Planner" Margin="96,307,96,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Click="btnJP_Click" Foreground="#FF842F1A"/>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

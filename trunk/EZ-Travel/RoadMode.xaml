@@ -1,0 +1,196 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="EZ_Travel.RoadMode"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:m="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+	<phone:PhoneApplicationPage.Resources>
+		<Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBoxItem">
+						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+										<Storyboard x:Name="lbxHightlight">
+											<ColorAnimation Duration="0" To="#FFF5D80F" Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" Storyboard.TargetName="ContentContainer" d:IsOptimized="True"/>
+										</Storyboard>
+									</VisualState>
+									</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Unselected"/>
+									<VisualState x:Name="Selected">
+										<Storyboard>
+											<ColorAnimation Duration="0" To="#FFF9D904" Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" Storyboard.TargetName="ContentContainer" d:IsOptimized="True"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="SelectedUnfocused"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Unfocused"/>
+									<VisualState x:Name="Focused"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Background="#FFFFDF06"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition Width="480*" />
+        </Grid.ColumnDefinitions>
+        <!--Panorama control-->
+
+        <controls:Panorama Title=" " Name="RoadPanaroma" Margin="0,-12,0,0" Foreground="White" Grid.Column="1" d:LayoutOverrides="GridBox" Loaded="RoadPanaroma_Loaded" >
+
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="PanoramaBackground.jpg"/>
+            </controls:Panorama.Background>
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="Journey" Name="Pana_Journey">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300" />
+                        <RowDefinition Height="210" />
+                    </Grid.RowDefinitions>
+                    <ListBox Height="271" HorizontalAlignment="Left" Margin="5,206,0,0" Name="lbxDestination" VerticalAlignment="Top" Width="390" Background="White" Foreground="Black" SelectionChanged="lbxDestination_SelectionChanged" FontSize="24" Grid.RowSpan="2" />
+                    <TextBlock Height="45" Margin="6,0,208,0" Name="tbStart" Text="Starting Point" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="-6,37,0,0" Name="tbxStart" VerticalAlignment="Top" Width="414" TextChanged="tbxStart_TextChanged" GotFocus="tbxStart_GotFocus" />
+                    <TextBlock Height="43" HorizontalAlignment="Left" Margin="7,103,0,0" Name="tbDestination" Text="Destination" VerticalAlignment="Top" Width="175" FontSize="28" FontWeight="Bold" />
+                    <Button Content="Plan" Height="72" HorizontalAlignment="Left" Margin="237,90,0,0" Name="btnPlan" VerticalAlignment="Top" Width="160" Click="btnPlan_Click" Grid.Row="1" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="-7,148,0,0" Name="tbxDestination" VerticalAlignment="Top" Width="414" TextChanged="tbxDestination_TextChanged" GotFocus="tbxDestination_GotFocus" />
+                    <ListBox Height="229" HorizontalAlignment="Left" Margin="6,97,0,0" Name="lbxStart" VerticalAlignment="Top" Width="390" Background="White" Foreground="Black" SelectionChanged="lbxStart_SelectionChanged" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Grid.RowSpan="2" FontSize="24" />
+                </Grid>
+            </controls:PanoramaItem>
+            
+            
+            <controls:PanoramaItem Header="Route Plan" Name="Pana_routeplan" >
+                <Grid x:Name="Item1" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="36*" />
+                        <ColumnDefinition Width="373*" />
+                        <ColumnDefinition Width="11*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <m:Map Name="myMap" CredentialsProvider="Akxg4L1TJmWpzXIsT1jbpBfFF1TEcfrrog2cytX_mCZ8PqrCfHvFx1mJ5D_Wa4Ix" LogoVisibility="Collapsed" Grid.ColumnSpan="3">
+
+                        <Button x:Name="ButtonZoomIn"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Height="56" Width="56" Margin="8,80,0,0" FontSize="72" FontFamily="Times New Roman" Style="{StaticResource ButtonZoomInStyle}" Click="ButtonZoomIn_Click"  />
+
+                        <Button x:Name="ButtonZoomOut"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Height="56" Width="56" Margin="8,160,0,0" Style="{StaticResource ButtonZoomOutStyle}" Click="ButtonZoomOut_Click" />
+
+                        <Button x:Name="ButtonLocate"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Height="56" Width="56" Margin="8,240,0,0" Style="{StaticResource ButtonLocateStyle}" Click="ButtonLocate_Click" />
+
+                        <Button x:Name="ButtonPOI"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Height="56" Width="56" Margin="8,320,0,0" Style="{StaticResource ButtonIntineraryPOIStyle}" Click="ButtonPOI_Click" />
+                    </m:Map>
+                    <Grid Grid.Row="1" Grid.ColumnSpan="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                    </Grid>
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="43,185,0,0" Name="tbxStatus" Text="" VerticalAlignment="Top" Width="320" Grid.Column="1" />
+                    <Button Content="No GPS" Height="69" HorizontalAlignment="Left" Margin="231,441,0,0" Name="btnNGPS" VerticalAlignment="Top" Width="147" Click="button1_Click" Background="Black" Grid.Column="1" Grid.ColumnSpan="2" />
+                    <Image Height="120" HorizontalAlignment="Left" Margin="1,401,0,0" Name="imgLegend" Stretch="Fill" VerticalAlignment="Top" Width="190" Source="/EZ-Travel;component/Resources/Style/Legend.png" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+                    <Grid Grid.Column="1" Height="136" HorizontalAlignment="Left" Margin="54,5,0,0" Name="gdShow" VerticalAlignment="Top" Width="296" Background="#FFB1CDFF">
+                        <CheckBox Content="Place of Interest" Height="72" HorizontalAlignment="Left" Margin="27,-2,0,0" Name="cbxPOI" VerticalAlignment="Top" Width="330" Foreground="Black" Checked="cbxPOI_Checked" Unchecked="cbxPOI_Unchecked" />
+                        <CheckBox Content="Itinerary" Height="72" HorizontalAlignment="Left" Margin="28,57,0,0" Name="cbxItinary" VerticalAlignment="Top" Width="232" Foreground="Black" Checked="cbxItinary_Checked" Unchecked="cbxItinary_Unchecked" />
+                    </Grid>
+                    <ListBox Height="189" HorizontalAlignment="Left" Margin="124,313,0,0" Name="lbxIternary" VerticalAlignment="Top" Width="249" SelectionChanged="lbxIternary_SelectionChanged" Foreground="Black" Grid.Column="1" Background="White" FontSize="24">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="tbNumber" Text="{Binding Number}" />
+                                    <TextBlock x:Name="tbPlaces" Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+
+            </controls:PanoramaItem>
+          
+
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <controls:PanoramaItem Header="Bus Stop" Name="pana_bus">
+                <Grid Height="511" HorizontalAlignment="Left" Name="grid1" VerticalAlignment="Top" Width="399">
+                    <TextBlock Height="43" HorizontalAlignment="Left" Margin="18,6,0,0" Name="tbNextStop" Text="Next Stop:" VerticalAlignment="Top" FontSize="28" Width="180" FontWeight="Bold" />
+                    <TextBlock Height="54" HorizontalAlignment="Left" Margin="18,55,0,0" Name="tbxStop" Text="" VerticalAlignment="Top" Width="356" FontSize="24" FontWeight="Bold" TextDecorations="Underline"/>
+                    <ListBox Height="294" HorizontalAlignment="Stretch" Margin="18,184,0,0" Name="lbxBusStop" VerticalAlignment="Top" Width="356" IsEnabled="False" FontSize="28" Foreground="Black" Background="White" BorderBrush="White" ScrollViewer.VerticalScrollBarVisibility="Visible"></ListBox>
+                    <TextBlock Height="52" HorizontalAlignment="Left" Margin="20,134,0,0" Name="tbList" Text="List of Bus Stops" VerticalAlignment="Top" Width="311" FontSize="28" FontWeight="Bold"  />
+                    <Button Name="btnStimulate" Content="Start" Height="89" Margin="311,-8,-1,431" Click="btnStimulate_Click" />
+                </Grid>
+    
+    </controls:PanoramaItem>
+
+            <controls:PanoramaItem Header="History" Name="pana_History">
+                <Grid Height="511" HorizontalAlignment="Left" Name="gridHistory" VerticalAlignment="Top" Width="399">
+                    <ListBox Height="410" HorizontalAlignment="Left" Margin="3,18,0,0" Name="lbxFave" VerticalAlignment="Top" Width="394" FontSize="26">
+                        <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel x:Name="lbxPanel" Orientation="Horizontal">
+                                <toolkit:ContextMenuService.ContextMenu >
+                                    <toolkit:ContextMenu x:Name="ctxName">
+                                        <toolkit:MenuItem Header="Delete" Click="MenuItem_Click"/>
+                                            <toolkit:MenuItem Header="Plan" Click="MenuItem_Click"/>
+
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                  <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+
+                        </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button Content="Clear History" Height="72" HorizontalAlignment="Left" Margin="86,424,0,0" Name="btnClearFave" VerticalAlignment="Top" Width="267" Click="btnClearFave_Click" />
+                </Grid>
+
+            </controls:PanoramaItem>
+
+
+        </controls:Panorama>
+      
+</Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>

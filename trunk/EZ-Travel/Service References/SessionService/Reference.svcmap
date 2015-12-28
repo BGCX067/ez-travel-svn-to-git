@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d4cbb743-df5f-4d4e-8be8-554a6ace70cb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://46.4.195.237/EZTravelSessionWCF/Service1.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="0c13449a-86ef-4be0-af37-1388e9aeac23" SourceId="1" SourceUrl="http://static.237.195.4.46.clients.your-server.de/EZTravelSessionWCF/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service12.disco" MetadataType="Disco" ID="dbc3daf6-003b-4efb-9dd6-5991259e7c3b" SourceId="1" SourceUrl="http://46.4.195.237/EZTravelSessionWCF/Service1.svc?disco" />
+    <MetadataFile FileName="Service14.xsd" MetadataType="Schema" ID="b726b48c-c885-4ab7-b663-90729c0ddb15" SourceId="1" SourceUrl="http://static.237.195.4.46.clients.your-server.de/EZTravelSessionWCF/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service12.wsdl" MetadataType="Wsdl" ID="f116f511-6311-45a0-89c4-33a3073476be" SourceId="1" SourceUrl="http://static.237.195.4.46.clients.your-server.de/EZTravelSessionWCF/Service1.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

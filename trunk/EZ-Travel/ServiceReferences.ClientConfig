@@ -1,0 +1,68 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IRouteService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IGeocodeService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IService11" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IService12" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IService13" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+            <customBinding>
+                <binding name="CustomBinding_IRouteService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_IGeocodeService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IRouteService"
+                contract="RouteService.IRouteService" name="BasicHttpBinding_IRouteService" />
+            <endpoint address="http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc/binaryHttp"
+                binding="customBinding" bindingConfiguration="CustomBinding_IRouteService"
+                contract="RouteService.IRouteService" name="CustomBinding_IRouteService" />
+            <endpoint address="http://dev.virtualearth.net/webservices/v1/geocodeservice/GeocodeService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IGeocodeService"
+                contract="GeocodeService.IGeocodeService" name="BasicHttpBinding_IGeocodeService" />
+            <endpoint address="http://dev.virtualearth.net/webservices/v1/geocodeservice/GeocodeService.svc/binaryHttp"
+                binding="customBinding" bindingConfiguration="CustomBinding_IGeocodeService"
+                contract="GeocodeService.IGeocodeService" name="CustomBinding_IGeocodeService" />
+            <endpoint address="http://46.4.195.237/EZTravelWCF/Service1.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService1"
+                contract="localService.IService1" name="BasicHttpBinding_IService1" />
+            <endpoint address="http://46.4.195.237/EZTravelPushWCF/Service1.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService11"
+                contract="PushService.IService1" name="BasicHttpBinding_IService11" />
+            <endpoint address="http://static.237.195.4.46.clients.your-server.de/EZTravelSessionWCF/Service1.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService12"
+                contract="SessionService.IService1" name="BasicHttpBinding_IService12" />
+            <endpoint address="http://46.4.195.237/EZTravelPushWCF/Service1.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService13"
+                contract="PushService.IService1" name="BasicHttpBinding_IService13" />
+        </client>
+    </system.serviceModel>
+</configuration>
